@@ -23,7 +23,6 @@ Docker : 20.10.16
 ### Build & Run
 
 ```
-// setting celery worker
 $ sudo git clone {this repo}
 $ sudo docker build -t main_server .
 $ sudo docker run -d -p 8080:8080 main_server
