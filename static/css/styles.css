@@ -11286,3 +11286,31 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+.header-picture{
+  width: 60vw;
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  width: 50vw;
+  height: 5vh;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+.search > img {
+  height: 4vh;
+  margin: 1vw;
+}
+
+.body-top{
+  display: flex;
+  justify-content: center;
+}
