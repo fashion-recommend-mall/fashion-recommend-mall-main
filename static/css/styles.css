@@ -11314,3 +11314,61 @@ input {
   display: flex;
   justify-content: center;
 }
+
+.page{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.pagination{
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.pagination li{
+  display: inline;
+  text-align: center;
+}
+
+.pagination a{
+  float: left;
+  display: block;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 5px 12px;
+  color: #96a0ad;
+  line-height: 1.5;
+}
+
+.left:hover, .right:hover{
+  color: #2e9cdf;
+}
+
+.pagination a.active{
+  cursor: default;
+  color: #ffffff;
+}
+
+.pagination a:active{
+  outline: none;
+}
+
+.num{
+  margin-left: 3px;
+  padding: 0;
+  line-height: 30px;
+}
+
+.num:hover{
+  background-color: #D3D3D3;
+  color: #ffffff;
+}
+
+.num.active{
+  background-color: #D3D3D3;
+  cursor: pointer
+}
