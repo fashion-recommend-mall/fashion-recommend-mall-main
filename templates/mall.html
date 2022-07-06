@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="py-5">
+    <form role="form" method="post" action="">
+        <div class = "body-top">
+            {% csrf_token %}
+            <div class="search">
+                {{ form.search }}
+                <button type = "submit" class="btn">
+                    <img class = "search-img" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
+                </button>
+            </div>
+        </div>
+        <div class = "category-bar">
+            <ul class = "category-nav">
+                <li id = "category" value = "all"><a href= "{% url 'index' %}?category=all">전체</a></li>
+                <li id = "category1" value = "Top"><a href= "{% url 'index' %}?category=Top">상의</a></li>
+                <li id = "category2" value = "Pants"><a href= "{% url 'index' %}?category=Pants">바지</a></li>
+                <li id = "category3" value = "Outer"><a href= "{% url 'index' %}?category=Outer">아우터</a></li>
+                <li id = "category4" value = "Onepiece"><a href= "{% url 'index' %}?category=Dress">원피스</a></li>
+                <li id = "category5" value = "Skirt"><a href= "{% url 'index' %}?category=Skirt">치마</a></li>
+            </ul>
+        </div>
+    </form>
+    <div class="container px-4 px-lg-5 mt-5 item-views">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            {% for product in product_list %}
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" src="{{product.image_link}}" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h6 class="fw-bolder">{{product.title}}</h6>
+                            <!-- Product price-->
+                            {{product.price}}
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">More</a></div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
