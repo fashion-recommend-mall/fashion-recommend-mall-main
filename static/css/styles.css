@@ -11297,7 +11297,7 @@ textarea.form-control-lg {
 }
 
 input {
-  width: 50vw;
+  width: 40vw;
   height: 5vh;
   border: 1px solid #bbb;
   border-radius: 8px;
@@ -11371,4 +11371,30 @@ input {
 .num.active{
   background-color: #D3D3D3;
   cursor: pointer
+}
+
+.category-bar{
+  width: 100vw;
+}
+
+ul.category-nav{
+  display: flex;
+  width: 100vw;
+  justify-content: space-around;
+}
+
+.category-nav > li{
+  display:inline-block;
+  text-align:center;
+
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+
+  max-width: 250px;
+  width: 100%;
+}
+
+.category-nav > li:hover{
+  background-color: #D3D3D3;
 }

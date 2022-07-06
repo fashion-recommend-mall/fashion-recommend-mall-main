@@ -10,6 +10,7 @@ es = Elasticsearch('http://localhost:9200')
 def index(request):
     
     _from = request.GET.get("page")
+    _category = request.GET.get("category")
     size = 20
 
     if _from == "first" or _from is None:
@@ -20,24 +21,31 @@ def index(request):
     index = "products"
     body = { 
             "from" : _from,
-            "size" : size
+            "size" : size,
+            "query" :{
+              "bool": {
+
+              }
+            }
         }
-    
+    if _category is not None and _category != "all":
+      body["query"]["bool"]["filter"] = [
+                {
+                  "match": {
+                    "category": _category
+                  }
+                }
+              ]
     if request.method == 'POST':
         form = SearchForm(request.POST)
         if form.is_valid():
-            query = { 
-                    "bool": { 
-                      "must": [
-                        {
-                          "query_string": {
-                            "query": form.cleaned_data['search']
-                          }
-                        }
-                      ],
+            body["query"]["bool"]["must"] = [
+                  {
+                    "query_string": {
+                      "query": form.cleaned_data['search']
                     }
-                }
-            body["query"] = query
+                  }
+                ]
     else:
         form = SearchForm()
 
