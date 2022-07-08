@@ -26,9 +26,7 @@
         </header>
         {% csrf_token %}
         <section class = "main">
-            <div class = "style">
-                {% block content %}{% endblock content %}
-            </div>
+            {% block content %}{% endblock content %}
         </section>
     <!-- Footer-->
     <footer class="py-5 bg-dark">

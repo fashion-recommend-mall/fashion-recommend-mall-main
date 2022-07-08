@@ -4,8 +4,10 @@ from django.shortcuts import render
 from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 
-from mall.forms import UploadFileForm
+from mall.forms import SearchForm
 from elasticsearch import Elasticsearch
+
+from mall.service.elasticserch_service import make_products_query
 
 es = Elasticsearch('http://localhost:9200')
 deep_learning_server = "http://localhost:3000"
@@ -13,21 +15,25 @@ deep_learning_server = "http://localhost:3000"
 # Create your views here.
 def index(request):
 
-  if request.method == 'POST':
-      form = UploadFileForm(request.POST, request.FILES)
+    category = request.GET.get("category", "all")
+    
+    q = None
 
-      if form.is_valid():
+    if request.method == 'POST':
+        form = SearchForm(request.POST)
+        if form.is_valid():
+            q = form.cleaned_data['search']
+    else:
+        form = SearchForm()
+        
+    index = "products"
 
-        f = request.FILES["file"]
-        path = default_storage.save('static/media/img.jpeg', ContentFile(f.read()))
+    body = make_products_query(category, q)
 
-        #result = requests.get(deep_learning_server+f'/upload?img_path=http://localhost:8000/{path}')
+    res = es.search(index=index, body=body)
 
-        #print(result.text)
-        return render(request, 'mall.html')
-  else:
-      form = UploadFileForm()
+    product_list = [res.get("_source") for res in res.get("hits").get("hits")]
 
-  return render(request, 'style.html')
+    return render(request, "index.html", {"product_list": product_list, "form" : form})
 
     
