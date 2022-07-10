@@ -11354,3 +11354,18 @@ ul.category-nav{
   margin-right: 5vw;
   width: 10vw;
 }
+
+.account-body{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: gray;
+}
+
+.body-title{
+  width:70%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -23,10 +23,19 @@
 
             {% if request.user.is_authenticated %}
 
-            <button class="btn btn-outline-dark login-button"  onclick = "location.href = 'account/MyPage' ">
-                <i class="bi bi-person-circle me-1"></i>
-                My page
-            </button>
+            <ul class="navbar-nav login-button">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle me-1"></i>
+                        {{request.user}} 님
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/account/mypage">My Page</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="/account/logout">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
 
             {% else%}
 
@@ -38,7 +47,7 @@
         </nav>
         <!-- Header-->
         <header class="header">
-            <img class="header-picture" src="../static/logo.png"/>
+            <img class="header-picture" src="{% static 'logo.png' %}"/>
         </header>
         {% csrf_token %}
         <section class = "main">
