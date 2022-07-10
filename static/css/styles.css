@@ -11349,3 +11349,8 @@ ul.category-nav{
   align-items: center;
   display: flex;
 }
+
+.login-button{
+  margin-right: 5vw;
+  width: 10vw;
+}
