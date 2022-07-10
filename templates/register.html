@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="row login-card ">
+        <div class="col-md-8">
+            <div class="card">
+                <form role="form" method="post" action="" enctype="multipart/form-data">
+                {% csrf_token %} 
+
+                <label>Username</label>
+                {{ sign_form.username }}
+
+                <label>email</label>
+                {{ sign_form.email }}
+
+                <label>password1</label>
+                {{ sign_form.password1 }}
+
+                <label>Username</label>
+                {{ sign_form.password2 }}
+
+                <label>Img</label>
+                {{ image_form.img1 }}
+                <label>Img</label>
+                {{ image_form.img2 }}
+                <label>Img</label>
+                {{ image_form.img3 }}
+                <label>Img</label>
+                {{ image_form.img4 }}
+                <label>Img</label>
+                {{ image_form.img5 }}
+                <label>Img</label>
+                {{ image_form.img6 }}
+                <label>Img</label>
+                {{ image_form.img7 }}
+                <label>Img</label>
+                {{ image_form.img8 }}
+                <label>Img</label>
+                {{ image_form.img9 }}
+                <label>Img</label>
+                {{ image_form.img10 }}
+
+                <button type="submit" name="login" class="btn btn-fill login-footer-item">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -71,6 +71,17 @@ class SignUpForm(UserCreationForm):
         """
         This is meta class for matching form data with admin user model!
         """
-
         model = User
         fields = ('username', 'email', 'password1', 'password2')
+
+class UploadImageForm(forms.Form):
+    img1 = forms.ImageField()
+    img2 = forms.ImageField()
+    img3 = forms.ImageField()
+    img4 = forms.ImageField()
+    img5 = forms.ImageField()
+    img6 = forms.ImageField()
+    img7 = forms.ImageField()
+    img8 = forms.ImageField()
+    img9 = forms.ImageField()
+    img10 = forms.ImageField()
