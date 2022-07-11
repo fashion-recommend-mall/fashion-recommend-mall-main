@@ -11357,15 +11357,19 @@ ul.category-nav{
 
 .account-body{
   width: 100vw;
-  display: flex;
-  justify-content: center;
-  background-color: gray;
 }
 
 .body-title{
-  width:70%;
+  width:100%;
   height: 10vh;
+  padding-left: 5vw;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  background-color: gray;
+}
+
+.body{
+  margin: 5vh;
+  display: flex;
+  justify-content: space-around;
 }

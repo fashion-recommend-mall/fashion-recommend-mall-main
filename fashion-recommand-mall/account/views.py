@@ -44,8 +44,18 @@ def logout_view(request):
 def my_page_view(request):
     '''
     '''
-    print(request.user)
-    return render(request, "my-page.html")
+
+    style_key_list = []
+    style_value_list = []
+
+    userDetail = UserDetail.objects.filter(user_id = request.user.id).first()
+
+    for key in userDetail.__dict__:
+        if key != "id" and key != "user_id" and key != "_state" and userDetail.__dict__.get(key) != 0:
+            style_key_list.append(key)
+            style_value_list.append(userDetail.__dict__.get(key))
+
+    return render(request, "my-page.html", {"style_key_list": style_key_list,"style_value_list":style_value_list})
 
 
 def register_view(request):
