@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 from account.forms import LoginForm, SignUpForm, UploadImageForm
 from account.models import UserDetail
@@ -61,7 +62,6 @@ def my_page_view(request):
 def register_view(request):
     '''
     '''
-    msg = None
     sign_form = SignUpForm(request.POST or None)
     image_form = UploadImageForm(request.POST, request.FILES)
 
@@ -78,9 +78,9 @@ def register_view(request):
             raw_password = sign_form.cleaned_data.get("password1")
 
             authenticate(username=username, password=raw_password)
-
-            return redirect("/")
+            
+            messages.success(request, "회원가입에 성공했습니다!")
         else:
-            msg = 'Form is not valid'
+            messages.warning(request, "회원가입에 실패했습니다.")
 
-    return render(request, "register.html", {"sign_form": sign_form,"image_form":image_form ,"msg": msg})
+    return render(request, "register.html", {"sign_form": sign_form,"image_form":image_form})

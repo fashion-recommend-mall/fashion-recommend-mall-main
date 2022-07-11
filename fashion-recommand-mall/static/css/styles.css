@@ -11371,5 +11371,30 @@ ul.category-nav{
 .body{
   margin: 5vh;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1{
+  margin-bottom: 3vh;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin: 3vh;
+}
+
+label {
+  margin: 1vh;
+}
+
+input {
+  width: 100%;
+  height: 100%;
+}
+
+.register-body{
+  margin-left: 5vw;
+  margin-right: 5vw;
 }
