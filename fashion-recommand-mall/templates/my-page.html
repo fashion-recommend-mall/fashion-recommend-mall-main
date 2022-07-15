@@ -5,9 +5,134 @@
     <div class = "body-title">
         <h3>my page</h3>
     </div>
-    <div class="body">
-        <h1>{{request.user}}님의 패션 분석 보고서</h1>
-        <canvas id="vpnPieChart" width="600" height="600"></canvas>
+    <div class="my-page-main">
+        <div class = "my-page-title">
+            <h1>{{request.user}}님의 패션 분석 보고서</h1>
+        </div>
+        <div class = "my-page-body">
+
+        <div class = "left-side">
+            <canvas id="vpnPieChart" width="600" height="600"></canvas>
+        </div>
+        <div class = "right-side">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      #1 Traditional
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        It is a traditional men's gentleman's suit in the U.S., especially in New York and Boston, on the east coast. Traditional, which means traditional and orthodox, belongs to the classical image in fashion, and in women's clothing, it is a conservative casual style, showing intelligence rather than femininity. Overall, it is characterized as sporty and functional. Women's clothing is a casual style with strong conservatism and shows intelligence rather than femininity.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                      #2 Manish
+                    </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        It means "a woman like a man" and refers to a style that emphasizes the feeling of good, such as angular clothing, military clothing, and leather jackets. In other words, it refers to the style in which men's clothing design is applied to women's clothing in fashion.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                      #3 Feminine
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        It refers to a feminine style that refers to lovely clothes, such as a round curve or a dress made of Skyy material.
+                    </div>
+                  </div>
+                </div><div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingFour">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                        #4 Ethnic
+                      </button>
+                    </h2>
+                    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">
+                        The meaning of "ethnic" is folk clothing, a simple and folk-like costume inspired by national clothing, called the ethnic look.
+                    </div>
+                    </div>
+                  </div><div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingFive">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                        #5 Contemporary
+                      </button>
+                    </h2>
+                    <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">
+                        It is a term that expresses the newest fashion concept at the moment, meaning contemporary. Therefore, the definition changes or changes according to the trends and times at that time.
+                    </div>
+                    </div>
+                  </div><div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingSix">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                        #6 Natural
+                      </button>
+                    </h2>
+                    <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">
+                        It refers to a style of clothing that is not only refined as a piece of silk fabric but also in an unbleached condition and a cloth of such color. It is widely used, not limited to fashion, but to lifestyle.
+                    </div>
+                    </div>
+                  </div><div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingSeven">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                        #7 Genderless
+                      </button>
+                    </h2>
+                    <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">
+                        It is a term that means gender-undistinguished or neutral and is derived from gender, which has been recommended internationally since the 1990s. Genderless styles in fashion combine masculine and feminine aspects into one, expressing gender that emphasizes humanism and neutrality beyond the concept of gender.
+                    </div>
+                    </div>
+                  </div><div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingEight">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
+                        #8 Sporty
+                      </button>
+                    </h2>
+                    <div id="flush-collapseEight" class="accordion-collapse collapse" aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">
+                        The original meaning of the word sporty is 'sportsmanlike', 'exercise', and 'cheerful'. It is an adjective derived from sport and is called sporty and sportive. The element of free exercise, active activity, functional wear, and enjoyment, that is, the element of play should be strong. It includes matching the inspired design and workwear from the uniforms of various athletes as outdoor clothes.
+                    </div>
+                    </div>
+                  </div><div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingNine">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
+                        #9 Subculture
+                      </button>
+                    </h2>
+                    <div id="flush-collapseNine" class="accordion-collapse collapse" aria-labelledby="flush-headingNine" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">
+                        A style that is organized or based around a particular feature of costumes, looks, and decorations that makes them unique enough to be recognized or defined as a subset of a wider culture.
+                    </div>
+                    </div>
+                  </div><div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTen">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTen" aria-expanded="false" aria-controls="flush-collapseTen">
+                        #10 Casual
+                      </button>
+                    </h2>
+                    <div id="flush-collapseTen" class="accordion-collapse collapse" aria-labelledby="flush-headingTen" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">
+                        When we distinguish clothes, we roughly divide them into formal wear and informal wear, so casual belongs to informal wear. It is a dress that can be worn casually to enjoy oneself comfortably and gently, away from the tricky formalities of suits, or suits. Casual refers to a casual suit and consists of a sporty jacket and skirt or pants that are free and comfortable to wear without being tied to form.
+                    </div>
+                    </div>
+                  </div>
+              </div>
+        </div>
+
+        </div>
     </div>
 </div>
 

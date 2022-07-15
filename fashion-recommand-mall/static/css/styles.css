@@ -11368,21 +11368,45 @@ ul.category-nav{
   background-color: gray;
 }
 
+.my-page-body{
+  margin: 5vh;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.my-page-title{
+  margin: 5vh;
+}
+
 .body{
   margin: 5vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
+}
+
+.left-side{
+  width: 40vw;
+}
+
+.right-side{
+  width: 40vw;
 }
 
 h1{
   margin-bottom: 3vh;
 }
 
+.main{
+  min-height: 50vh;
+}
+
 .input-container {
   display: flex;
   flex-direction: column;
   margin: 3vh;
+  height: 100%;
 }
 
 label {
@@ -11395,6 +11419,11 @@ input {
 }
 
 .register-body{
-  margin-left: 5vw;
-  margin-right: 5vw;
+  margin: 5vw;
+}
+
+.my-page-main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
